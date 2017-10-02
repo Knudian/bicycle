@@ -7,8 +7,7 @@ exports.local_pollution = ((req, res) => {
         config.airPLUrl
         +'?debut='+config.startDate
         +'&fin='+config.endDate
-        +'&polluant='+config.polluant
-        +'&zones%5B%5D='+config.location;
+        +'&ville='+config.ville;
     console.log(APIurl);
     http.get(APIurl
         , ((resGet) => {
