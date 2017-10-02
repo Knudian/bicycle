@@ -2,8 +2,6 @@
 const http = require('http');
 
 const config = require('../../config');
-
-
 exports.local_meteo = ((req, res) => {
     console.log(config.openWeatherMapServerUri + config.openWeatherMapApiUri + 'weather?q=Nantes,fr&appid=' + config.openWeatherMapApiKey);
     http.get(config.openWeatherMapServerUri + config.openWeatherMapApiUri + 'weather?q=Nantes,fr&appid=' + config.openWeatherMapApiKey
