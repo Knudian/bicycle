@@ -1,9 +1,11 @@
 {
   "name": "meteo",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.1"
+  },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "description": "RestFul api service for Bicycle project",
   "main": "server.js",
