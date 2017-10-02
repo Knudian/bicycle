@@ -1,20 +1,22 @@
 {
-  "name": "pollution",
-  "version": "0.0.1",
-  "dependencies": {},
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "leaflet": "^1.2.0",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.31.3",
+    "react-dom": "^16.0.0",
+    "react-leaflet": "^1.7.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.14"
+  },
   "scripts": {
-    "start": "node server.js"
-  },
-  "description": "RestFul api service for Bicycle project",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Knudian/bicycle.git"
-  },
-  "author": "Knudian, Fubuke, Aaol",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Knudian/bicycle/issues"
-  },
-  "homepage": "https://github.com/Knudian/bicycle#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
