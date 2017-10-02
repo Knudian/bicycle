@@ -3,14 +3,8 @@ import './App.css';
 import AppMap from "./Components/AppMap";
 import {Col, Grid, Row} from "react-bootstrap";
 import Weather from "./Components/Weather";
-import Pollution from "./Components/Pollution";
 
 class App extends Component {
-
-    shouldComponentUpdate(){
-        return true;
-    }
-
     render() {
         return (
             <Grid fluid>
@@ -19,11 +13,9 @@ class App extends Component {
                         <AppMap/>
                     </Col>
                     <Col xs={2}>
-                        <Row>
+                        <Row className="block60"></Row>
+                        <Row className="block40">
                             <Weather/>
-                        </Row>
-                        <Row>
-                            <Pollution/>
                         </Row>
                     </Col>
                 </Row>
