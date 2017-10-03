@@ -13,10 +13,7 @@ class App extends Component {
                         <AppMap/>
                     </Col>
                     <Col xs={2}>
-                        <Row className="block60"></Row>
-                        <Row className="block40">
-                            <Weather/>
-                        </Row>
+                        <Weather/>
                     </Col>
                 </Row>
             </Grid>

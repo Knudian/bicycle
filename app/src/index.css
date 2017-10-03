@@ -10,13 +10,7 @@ body {
     margin-right: -15px;
 }
 
-.block100 { height: 100vh; }
-.block90  { height: 90vh; }
-.block80  { height: 80vh; }
-.block70  { height: 70vh; }
-.block60  { height: 60vh; }
-.block50  { height: 50vh;}
-.block40  { height: 40vh;}
-.block30  { height: 30vh;}
-.block20  { height: 20vh;}
-.block10  { height: 10vh;}
+.arrow {
+    width: 64px;
+    height: 64px;
+}

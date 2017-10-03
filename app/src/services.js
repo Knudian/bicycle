@@ -1,0 +1,1 @@
+export const WeatherServiceUrl = `http://localhost:3100/meteo`;

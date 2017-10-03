@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
     "leaflet": "^1.2.0",
     "react": "^16.0.0",
@@ -11,6 +12,7 @@
     "react-leaflet": "^1.7.0"
   },
   "devDependencies": {
+    "nodemon": "^1.12.1",
     "react-scripts": "1.0.14"
   },
   "scripts": {
