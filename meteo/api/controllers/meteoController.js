@@ -1,9 +1,8 @@
 'use strict';
 const http = require('http');
 
-const config = require('../../config');
+const config = require('./../../config');
 exports.local_meteo = ((req, res) => {
-    console.log(config.openWeatherMapServerUri + config.openWeatherMapApiUri + 'weather?q=Nantes,fr&appid=' + config.openWeatherMapApiKey);
     http.get(config.openWeatherMapServerUri + config.openWeatherMapApiUri + 'weather?q=Nantes,fr&appid=' + config.openWeatherMapApiKey
         , ((resGet) => {
             const {statusCode} = resGet;
@@ -21,6 +20,7 @@ exports.local_meteo = ((req, res) => {
                 rawData += chunk;
             });
             resGet.on('end', () => {
+                console.log('meteo : res->end');
                 try {
                     const parsedData = JSON.parse(rawData);
                     res.json(parsedData);
@@ -31,5 +31,4 @@ exports.local_meteo = ((req, res) => {
         })).on('error', (e) => {
         console.error(`Got error: ${e.message}`);
     });
-})
-;
+});
