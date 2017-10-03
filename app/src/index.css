@@ -14,3 +14,8 @@ body {
     width: 64px;
     height: 64px;
 }
+
+.pollutionLvl {
+    border-radius: 50px;
+    border: 1px solid black;
+}
