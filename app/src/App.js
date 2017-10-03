@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
 import AppMap from "./Components/AppMap";
 import {Col, Grid, Row} from "react-bootstrap";
 import Weather from "./Components/Weather";
 import Pollution from "./Components/Pollution";
+import MeteoAlerts from "./Components/MeteoAlerts";
 
 class App extends Component {
     render() {
@@ -16,6 +16,7 @@ class App extends Component {
                     <Col xs={2}>
                         <Weather/>
                         <Pollution/>
+                        <MeteoAlerts/>
                     </Col>
                 </Row>
             </Grid>

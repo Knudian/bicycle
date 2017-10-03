@@ -40,7 +40,9 @@ export default class Pollution extends Component {
         return(
             <Row>
                 <Panel header="Air quality" bsStyle="info">
-                    <h2 className="text-center"><span class="pollutionLvl" style={{ background: `${p.couleur}` }}>&nbsp;{ p.niveau }&nbsp;</span></h2>
+                    <h2 className="text-center">
+                        <span className="pollutionLvl" style={{ background: `${p.couleur}` }}>&nbsp;{ p.niveau }&nbsp;</span>
+                    </h2>
                     <Table responsive>
                         <tbody>
                             <tr><th><abbr title="Ozone">O<sub>3</sub></abbr></th><td>{ p.O3 }</td></tr>
