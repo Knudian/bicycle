@@ -2,3 +2,4 @@
 .idea
 /app/node_modules/
 /meteo/node_modules/
+/pollution/node_modules/
