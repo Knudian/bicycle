@@ -44,7 +44,7 @@ export default class Pollution extends Component {
                     <Table responsive>
                         <tbody>
                             <tr><th><abbr title="Ozone">O<sub>3</sub></abbr></th><td>{ p.O3 }</td></tr>
-                            <tr><th><abbr title="PM10">PM10</abbr></th><td>{ p.PM10 }</td></tr>
+                            <tr><th><abbr title="Particules fines">PM10</abbr></th><td>{ p.PM10 }</td></tr>
                             <tr><th><abbr title="Dioxyde de soufre">SO<sub>2</sub></abbr></th><td>{ p.SO2 }</td></tr>
                             <tr><th><abbr title="Dioxyde d'azote">NO<sub>2</sub></abbr></th><td>{ p.NO2 }</td></tr>
                         </tbody>
