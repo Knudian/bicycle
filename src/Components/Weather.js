@@ -2,7 +2,7 @@ import React, {Component,} from 'react';
 import {Col, Row} from "react-bootstrap";
 import axios from 'axios';
 import {WeatherServiceUrl} from "../services";
-import arrow from './../arrow.svg';
+import arrow from '../arrow.svg';
 
 const kelvin2celcius = (kelvin) => {
     if( kelvin === null || kelvin === undefined){

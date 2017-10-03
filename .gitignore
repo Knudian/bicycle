@@ -1,6 +1,3 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
-/app/node_modules/
-/meteo/node_modules/
-/pollution/node_modules/
-/meteoAlert/node_modules/
+node_modules/
