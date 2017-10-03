@@ -21,7 +21,6 @@ exports.local_meteo = ((req, res) => {
                 rawData += chunk;
             });
             resGet.on('end', () => {
-                console.log('meteo : res->end');
                 try {
                     const parsedData = JSON.parse(rawData);
                     res.json(parsedData);
