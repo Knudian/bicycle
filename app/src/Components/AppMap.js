@@ -9,8 +9,7 @@ export default class AppMap extends Component {
         return(
             <Map center={position} zoom={13}>
                 <TileLayer
-                    url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                    url='http://{s}.tiles.wmflabs.org/hikebike/{z}/{x}/{y}.png'
                 />
             </Map>
         )

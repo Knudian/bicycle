@@ -12,8 +12,7 @@ const colors = [
     'red'
 ];
 
-export default class MeteoAlerts extends Component
-{
+export default class MeteoAlerts extends Component {
     constructor(props){
         super(props);
 
@@ -41,8 +40,9 @@ export default class MeteoAlerts extends Component
             <Row>
                 <p className="text-center">
                     <FontAwesome
+                        className="fa-10x"
                         name='flag'
-                        size='10x'
+                        size='lg'
                         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)', color : `${colors[this.state.coul]}` }}
                         />
                 </p>
