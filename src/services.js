@@ -1,3 +1,5 @@
-export const WeatherServiceUrl = `http://localhost:3100/meteo`;
-export const PollutionServiceUrl = `http://localhost:3200/pollution`;
-export const WeatherAlertServiceUrl = `http://localhost:3300/alert`;
+const baseURI = 'http://10.2.8.18:';
+export const WeatherServiceUrl      = baseURI + '3100/meteo';
+export const PollutionServiceUrl    = baseURI + '3200/pollution';
+export const WeatherAlertServiceUrl = baseURI + '3300/alert';
+export const RobberiesServiceUrl    = baseURI + '3400/robberies';
