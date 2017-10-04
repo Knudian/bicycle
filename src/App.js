@@ -1,7 +1,17 @@
 import React, {Component} from 'react';
 import AppMap from "./Components/AppMap";
 import {
-    Button, Col, Container, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader,
+    Button,
+    Col,
+    Container,
+    Form,
+    FormGroup,
+    Input,
+    Label,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader,
     Row
 } from "reactstrap";
 import axios from 'axios';
@@ -33,7 +43,6 @@ class App extends Component {
     toggle(){
         this.setState({ showModal : !this.state.showModal });
     }
-
     addRobbery(){
 
         let values = this.state;
@@ -59,11 +68,9 @@ class App extends Component {
     handleLatitudeChange(event){
         this.setState({latitude: event.target.value});
     }
-
     handleLongitudeChange(event){
         this.setState({longitude: event.target.value});
     }
-
     handleDescriptionChange(event){
         this.setState({description: event.target.value});
     }

@@ -4,17 +4,18 @@ import axios from 'axios';
 import {RobberiesServiceUrl} from "../services";
 import L from 'leaflet';
 import PropTypes from 'prop-types';
+import {subscribeToRobberies} from "../socket";
 
 const position = [47.21806, -1.552778];
 
 const markerIcon = L.icon({
     iconUrl: '/leaflet/dist/images/marker-icon.png',
     iconSize: [25, 41],
-    iconAnchor: [12, 0],
-    popupAnchor: [12, 20],
+    iconAnchor: [12, 41],
+    popupAnchor: [12, 0],
     shadowUrl: '/leaflet/dist/images/marker-shadow.png',
     shadowSize: [41, 41],
-    shadowAnchor: [12, 0]
+    shadowAnchor: [12, 41]
 });
 
 export default class AppMap extends Component {
@@ -28,25 +29,14 @@ export default class AppMap extends Component {
         this.timerID = null;
 
         this.handleClick = this.handleClick.bind(this);
+
+        subscribeToRobberies((err, robberies) => {
+            console.log(JSON.stringify(robberies));
+            this.setState({ robberies : robberies});
+        });
     }
 
     componentWillMount(){
-        axios.get(RobberiesServiceUrl)
-            .then(res => { this.setState({ robberies: res.data })});
-    }
-
-    componentDidMount(){
-        this.timerID = setInterval(
-            () => this.tick(),
-            1000
-        );
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timerID);
-    }
-
-    tick() {
         axios.get(RobberiesServiceUrl)
             .then(res => { this.setState({ robberies: res.data })});
     }
