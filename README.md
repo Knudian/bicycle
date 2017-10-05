@@ -28,10 +28,11 @@ Each of those are micro-services deserving the main project with JSON infos
 - [Bicycle Mailer](https://github.com/Knudian/bicycle_mq/)
 Those projects notifies the users of the main project.
 
-### Installing
+### Installing & running
 
 ```shell
 npm install
+npm start
 ```
 
 It runs in your port 3000. Protect yourself !
