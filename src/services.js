@@ -1,4 +1,4 @@
-const baseURI = 'http://10.2.8.18:';
+const baseURI = 'http://localhost:';
 export const WeatherServiceUrl      = baseURI + '3100/meteo';
 export const PollutionServiceUrl    = baseURI + '3200/pollution';
 export const WeatherAlertServiceUrl = baseURI + '3300/alert';

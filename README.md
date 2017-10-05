@@ -70,3 +70,4 @@ This project is not licensed.
 
 * Thanks to [Loic Guillois](http://fitlab.fr) for the architecture lecture.
 * Thanks to [Mr J's mum](http://orteil.dashnet.org/cookieclicker/) for her cookies.
+* Thanks to [Gojira](http://www.gojira-music.com/), [LOL](https://go.twitch.tv/ogaminglol), and [9GAG](http://9gag.com) for their active support during the development.
