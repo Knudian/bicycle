@@ -58,7 +58,7 @@ I UZD [GitHub](http://github.com/) 4 VERSIONIN.
 * **CAT J** - [FUBUKE](https://github.com/Fubuke)   - *SIDE DEVELOPA, CSS, LOLCAT TRANLASHUN* 
 * **Mr KAT** - [KNUDIAN](https://github.com/Knudian) - *MAIN DEVELOPA*
 * **DOGGY R** - [AAOL](https://github.com/Aaol)       - *SIDE DEVELOPA, MAILA*
-* **KITTY ♥** - [BIGBOOBIEZ](https://thatsnotanadress.com) - *MORAL SUPPORT*
+* **KITTY ♥** - [BIGBOOBIEZ](https://www.meetic.fr) - *MORAL SUPPORT*
 
 ## CAN I HAZ A LICENZ ?
 
@@ -66,5 +66,8 @@ TNO U CANT
 
 ## ALSO
 
-* Thanks to [Loic Guillois](http://fitlab.fr) for the architecture lecture.
-* Thanks to [Mr J's mum](http://orteil.dashnet.org/cookieclicker/) for her cookies.
+* LUV 2 [LOIC GUILLOIS](http://fitlab.fr) 4 DA ARCHITECTUR LECTUR.
+* LUV 2 [CAT J'S MUM](http://orteil.dashnet.org/cookieclicker/) 4 COOKIEZ !
+* LUV 2 [GOJIA](http://www.gojira-music.com/), [LOL](https://go.twitch.tv/ogaminglol), AN [9GAG](http://9gag.com) 4 DER ACTIV SUPPORT DURIN DA DEVELOPMENT.
+
+##KTHXBYE
