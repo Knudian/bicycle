@@ -45,22 +45,18 @@ The dependencies runs in differents ports:
 
 ## Built With
 
-* [React](https://reactjs.org/) - The web framework used
-* [React Strap](https://reactstrap.github.io) - Dependency Management
-
-## Versioning
-
-We use [GitHub](http://github.com/) for versioning. 
-For the versions available, see the [tags on this repository](https://github.com/bicycle/tags). 
+* [reactjs](https://reactjs.org/) - The SPA framework used
+* [reactstrap](https://reactstrap.github.io) - Bootstrap 4 in React.
+* [react-leaflet](https://github.com/PaulLeCam/react-leaflet) - LeafletJS for React.
+* [leafletjs](http://leafletjs.com) - A Mapping library.
+* [bootstrap](https://getbootstrap.com) - Useful CSS styling.
 
 ## Authors
 
 * **Mr J.** - [Fubuke](https://github.com/Fubuke)   - *Side Developer, CSS* 
 * **Mr K.** - [Knudian](https://github.com/Knudian) - *Main Development*
 * **Mr R.** - [Aaol](https://github.com/Aaol)       - *Side Development, Mail*
-* **Miss ♥** - [BigBoobies](https://thatsnotanadress.com) - *Moral Support*
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Miss ♥** - [BigBoobies](https://www.meetic.fr)  - *Moral Support*
 
 ## License
 
