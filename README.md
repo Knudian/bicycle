@@ -35,7 +35,13 @@ npm install
 ```
 
 It runs in your port 3000. Protect yourself !
-
+The dependencies runs in differents ports:
+- 3100: Meteo
+- 3200: Pollution
+- 3300: Meteo Alerts
+- 3400: Thefts (*Robbery*)
+- 8000: Notifier
+- ????: Mail
 
 ## Built With
 
