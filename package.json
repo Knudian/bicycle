@@ -4,12 +4,16 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0-beta",
     "leaflet": "^1.2.0",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
-    "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
-    "react-leaflet": "^1.7.0"
+    "react-fontawesome": "^1.6.1",
+    "react-leaflet": "^1.7.0",
+    "react-transition-group": "^2.2.1",
+    "reactstrap": "^5.0.0-alpha.3",
+    "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.12.1",

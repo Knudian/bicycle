@@ -1,5 +1,5 @@
 import React, {Component,} from 'react';
-import {Col, Row} from "react-bootstrap";
+import {Col, Row} from "reactstrap";
 import axios from 'axios';
 import {WeatherServiceUrl} from "../services";
 import arrow from '../arrow.svg';
@@ -22,16 +22,30 @@ export default class Weather extends Component {
 
         this.state = {
             weather : null
-        }
+        };
+
+        this.timerID = null;
+    }
+
+    componentDidMount(){
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        axios.get(WeatherServiceUrl)
+            .then(res => { this.setState({ weather: res.data}) });
     }
 
     componentWillMount(){
         axios.get(WeatherServiceUrl)
             .then(res => { this.setState({ weather: res.data}) });
-    }
-
-    shouldComponentUpdate(){
-        return true;
     }
 
     render(){
@@ -76,13 +90,19 @@ export default class Weather extends Component {
         };
 
         let icon = '',
-            rotate = 'rotate(0deg)';
+            rotate = 'rotate(0deg)',
+            windInfo = '';
+
         if (this.state.weather !== null) {
             w = this.state.weather;
             if( w.weather !== undefined) {
                 icon = 'http://openweathermap.org/img/w/' + w.weather[0].icon + '.png';
             }
             rotate = 'rotate(' + (w.wind.deg + 180) + 'deg)';
+            windInfo = mps2kmh(w.wind.speed) + 'km/h';
+            if( w.wind.deg !== undefined){
+                windInfo += ' (' + w.wind.deg +'°)';
+            }
         }
         return(
             <Row>
@@ -94,7 +114,7 @@ export default class Weather extends Component {
                 </Col>
                 <Col xs={12} className="text-center">
                     <p><img style={{ transform: rotate }} src={ arrow } className="arrow" alt="Wind direction" title="Wind direction"/></p>
-                    <p>{ mps2kmh(w.wind.speed) + 'km/h (' + w.wind.deg +'°)' }</p>
+                    <p>{ windInfo }</p>
                 </Col>
                 <Col xs={4} className="text-center"><h3><small title="Minimal temperature">{ kelvin2celcius(w.main.temp_min) }°C</small></h3></Col>
                 <Col xs={4} className="text-center"><h3 title="Average temperature">{ kelvin2celcius(w.main.temp) }°C</h3></Col>

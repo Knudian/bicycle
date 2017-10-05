@@ -21,5 +21,6 @@ body {
 }
 
 .fa-10x{
-    font-size: 3rem;
+    line-height: 10rem;
+    font-size: 10rem;
 }
