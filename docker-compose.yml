@@ -23,15 +23,21 @@ services:
    depends_on:
      - bicycle_meteo
      - bicycle_pollution
-     - bicycle_meteoAlerts
+     - bicycle_meteo_alerts
      - bicycle_robbery
      - bicycle_notifier
      - bicycle_mq
+   command:
+     - git clone https://github.com/Knudian/bicycle_pollution.git
+     - git clone https://github.com/Knudian/bicycle_meteo.git
+     - git clone https://github.com/Knudian/bicycle_meteoAlerts.git
+     - git clone https://github.com/Knudian/bicycle_notifier.git
+     - git clone https://github.com/Knudian/bicycle_mq.git
+     - git clone https://github.com/Knudian/bicycle_robbery.git 
    labels:
      - "traefik.frontend.rule=Host:bicycle.local,www.bicycle.local"
      - "traefik.backend=irigo_app"
-     - "com.centurylinklabs.watchtower.enable=false"
-   network_mode: 
+     - "com.centurylinklabs.watchtower.enable=false" 
    build: ./
    ports:
      - 3000:3000
@@ -44,7 +50,6 @@ services:
    labels:
      - "traefik.backend=bicycle_meteo"
      - "com.centurylinklabs.watchtower.enable=false"
-   network_mode:
    build: ../bicycle_meteo
    ports:
      - 3100:3100
@@ -57,20 +62,18 @@ services:
    labels:
      - "traefik.backend=bicycle_pollution"
      - "com.centurylinklabs.watchtower.enable=false"
-   network_mode:
    build: ../bicycle_pollution
    ports:
      - 3200:3200
    volumes:
      - "$PWD/bicycle_pollution:/home/kawelio/www/bicycle/biycle_pollution"
 
- bicycle_meteoAlerts:
-   container_name: bicycle_meteoAlerts
+ bicycle_meteo_alerts:
+   container_name: bicycle_meteo_alerts
    restart: unless-stopped
    labels:
      - "traefik.backend=bicycle_meteoAlerts"
      - "com.centurylinklabs.watchtower.enable=false"
-   network_mode:
    build: ../bicycle_meteoAlerts
    ports:
      - 3300:3300
@@ -83,7 +86,6 @@ services:
    labels:
      - "traefik.backend=bicycle_robbery"
      - "com.centurylinklabs.watchtower.enable=false"
-   network_mode:
    build: ../bicycle_robbery
    ports:
      - 3400:3400
@@ -96,7 +98,6 @@ services:
    labels:
      - "traefik.backend=bicycle_notifier"
      - "com.centurylinklabs.watchtower.enable=false"
-   network_mode:
    build: ../bicycle_notifier
    ports:
      - 8000:8000
@@ -109,7 +110,6 @@ services:
    labels:
      - "traefik.backend=bicycle_mq"
      - "com.centurylinklabs.watchtower.enable=false"
-   network_mode:
    build: ../bicycle_mq
    ports:
      - 8500:8500
