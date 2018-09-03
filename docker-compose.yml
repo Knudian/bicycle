@@ -1,0 +1,117 @@
+version: '2'
+services:
+ traefik:
+   container_name: traefik
+   image: traefik:latest
+   restart: unless-stopped
+   labels:
+     - "traefik.frontend.rule=Host:traefik.local,www.traefik.local"
+     - "traefik.backend=traefik"
+     - "traefik.port=8080"
+   ports:
+     - 80:80
+     - 8080:8080
+     - 443:443
+   volumes:
+     - $PWD/traefik.toml:/etc/traefik/traefik.toml
+     - $PWD/acme:/etc/traefik/acme
+     - /var/run/docker.sock:/var/run/docker.sock
+
+ bicycle:
+   container_name: bicycle
+   restart: unless-stopped
+   depends_on:
+     - bicycle_meteo
+     - bicycle_pollution
+     - bicycle_meteoAlerts
+     - bicycle_robbery
+     - bicycle_notifier
+     - bicycle_mq
+   labels:
+     - "traefik.frontend.rule=Host:bicycle.local,www.bicycle.local"
+     - "traefik.backend=irigo_app"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode: 
+   build: ./
+   ports:
+     - 3000:3000
+   volumes:
+     - "$PWD/bicycle:/home/kawelio/www/bicycle/biycle"
+
+ bicycle_meteo:
+   container_name: bicycle_meteo
+   restart: unless-stopped
+   labels:
+     - "traefik.backend=bicycle_meteo"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode:
+   build: ../bicycle_meteo
+   ports:
+     - 3100:3100
+   volumes:
+     - "$PWD/bicycle_meteo:/home/kawelio/www/bicycle/biycle_meteo"
+
+ bicycle_pollution:
+   container_name: bicycle_pollution
+   restart: unless-stopped
+   labels:
+     - "traefik.backend=bicycle_pollution"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode:
+   build: ../bicycle_pollution
+   ports:
+     - 3200:3200
+   volumes:
+     - "$PWD/bicycle_pollution:/home/kawelio/www/bicycle/biycle_pollution"
+
+ bicycle_meteoAlerts:
+   container_name: bicycle_meteoAlerts
+   restart: unless-stopped
+   labels:
+     - "traefik.backend=bicycle_meteoAlerts"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode:
+   build: ../bicycle_meteoAlerts
+   ports:
+     - 3300:3300
+   volumes:
+     - "$PWD/bicycle_meteoAlerts:/home/kawelio/www/bicycle/biycle_meteoAlerts"
+
+ bicycle_robbery:
+   container_name: bicycle_robbery
+   restart: unless-stopped
+   labels:
+     - "traefik.backend=bicycle_robbery"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode:
+   build: ../bicycle_robbery
+   ports:
+     - 3400:3400
+   volumes:
+     - "$PWD/bicycle_robbery:/home/kawelio/www/bicycle/biycle_robbery"
+
+ bicycle_notifier:
+   container_name: bicycle_notifier
+   restart: unless-stopped
+   labels:
+     - "traefik.backend=bicycle_notifier"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode:
+   build: ../bicycle_notifier
+   ports:
+     - 8000:8000
+   volumes:
+     - "$PWD/bicycle_notifier:/home/kawelio/www/bicycle/biycle_notifier"
+
+ bicycle_mq:
+   container_name: bicycle_mq
+   restart: unless-stopped
+   labels:
+     - "traefik.backend=bicycle_mq"
+     - "com.centurylinklabs.watchtower.enable=false"
+   network_mode:
+   build: ../bicycle_mq
+   ports:
+     - 8500:8500
+   volumes:
+     - "$PWD/bicycle_mq:/home/kawelio/www/bicycle/biycle_mq"

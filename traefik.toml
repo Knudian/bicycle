@@ -1,0 +1,42 @@
+# traefik.toml
+
+################################################################
+
+# Global configuration - lucavsn.com - Lucas Van Noort
+
+################################################################
+
+defaultEntryPoints = ["http", "https"]
+
+[entryPoints]
+[entryPoints.http]
+address = ":80"
+[entryPoints.http.redirect]
+entryPoint = "https"
+[entryPoints.https]
+address = ":443"
+[entryPoints.https.tls]
+
+[acme]
+email = "XXXXX@gmail.com"
+storageFile = "/etc/traefik/acme/acme.json"
+entryPoint = "https"
+onHostRule = true
+onDemand = false
+
+[[acme.domains]]
+main = "bicycle.local"
+
+[web]
+address = ":8080"
+[web.auth.basic]
+users = ["admin:admin"]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "bicycle.local"
+watch = true
+exposedbydefault = true
+
+[acme.httpChallenge]
+entryPoint = "http"
